@@ -6,11 +6,20 @@ module ObServ
     end
 
     def publish(event, *args)
-      ObServ.publish event, *args
+      # ObServ.publish event, *args
+      ObServ.config[:publish].call(event, *args)
     end
   end
+
   module_function
   attr_accessor :notifies
+
+  def config
+    @config ||= {
+      publish: ObServ.method(:publish)
+    }
+  end
+
   def register(obj, event, on: :receive)
     @notifies ||= {}
     block = block_given? ? Proc.new : nil

@@ -1,6 +1,4 @@
-module Database
-  module_function
-
+class Database
   extend ObServ::DSL
 
   subscribe :db_save do |*args|

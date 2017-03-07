@@ -1,9 +1,9 @@
 require './ob_serv'
 require './database'
-module Api
-  module_function
-
+require './celluloid_publisher'
+class Api
   extend ObServ::DSL
+  include ObServ::DSL
 
   def task
     data = http_or_fake
@@ -12,7 +12,7 @@ module Api
   end
 
   def http_or_fake
-    data = [1, 2]
+    data = [1, 2, 3, 4, 5]
     puts "get data: #{data}"
     data
   end

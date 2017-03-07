@@ -1,9 +1,7 @@
 require './ob_serv'
 require './api'
-module TimingTask
-  module_function
-
-  def run
-    Api.task
+class TimingTask
+  def self.run
+    Api.new.task
   end
 end
