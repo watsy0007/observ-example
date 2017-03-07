@@ -1,4 +1,4 @@
-require './ob_serv'
+require 'ob_serv'
 require './database'
 require './celluloid_publisher'
 class Api

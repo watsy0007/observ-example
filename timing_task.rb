@@ -1,4 +1,4 @@
-require './ob_serv'
+require 'ob_serv'
 require './api'
 class TimingTask
   def self.run
