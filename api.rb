@@ -1,6 +1,5 @@
 require 'ob_serv'
 require './database'
-require './celluloid_publisher'
 class Api
   extend ObServ::DSL
   include ObServ::DSL
